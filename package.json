@@ -1,0 +1,26 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "including my techonolgy and my \u0016experience in web",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liminshen/liminshen.github.io.git"
+  },
+  "keywords": [
+    "web"
+  ],
+  "author": "sam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liminshen/liminshen.github.io/issues"
+  },
+  "homepage": "https://github.com/liminshen/liminshen.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5"
+  }
+}

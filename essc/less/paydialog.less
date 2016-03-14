@@ -1,0 +1,114 @@
+@rem:46.875;
+.payPage{
+  background: rgba(0,0,0,0.5);
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  z-index:100;
+}
+.payBox{
+  background: #fff;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  left:0;
+  height:800rem/@rem;
+}
+.payBox{
+  animation:pay 1s;
+  -webkit-animation:pay 1s;
+}
+@keyframes pay
+{
+  from {height:0}
+  to {height:800rem/@rem;}
+}
+@-webkit-keyframes pay
+{
+  from {height:0}
+  to {height:800rem/@rem;}
+}
+.payBox h3{
+  height:120rem/@rem;
+  line-height: 120rem/@rem;
+  color:#666;
+  font-size:36rem/@rem;
+  position: relative;
+  text-align:center;
+  border-bottom:1px solid #d2d2d2;
+}
+.payBox .pay_close{
+  //background:url(/v2/images/h5/pay.png) no-repeat 0 -198rem/@rem;
+  background-size:66rem/@rem 264rem/@rem;
+  width:66rem/@rem;
+  height:66rem/@rem;
+  position: absolute;
+  top:24rem/@rem;
+  right:20rem/@rem;
+}
+.payBox div{
+  padding:0 30rem/@rem;
+  border-bottom:1px solid #d2d2d2;
+  height:103rem/@rem;
+  line-height: 103rem/@rem;
+  overflow:hidden;
+}
+.payBox div .fl{
+  float:left;
+}
+.payBox div .fr{
+  float:right;
+}
+.payBox div p{
+  font-size:30rem/@rem;
+}
+.pay_price .fl{
+  color:#666;
+}
+.pay_price .fr{
+  color:#cf3131;
+  font-size:40rem/@rem;
+}
+.pay_type .fl{
+  color:#333;
+}
+.pay_type .pay_icon{
+  //background:url(/v2/images/h5/pay.png) no-repeat 0 0;
+  background-size:66rem/@rem 264rem/@rem;
+  height:66rem/@rem;
+  width:66rem/@rem;
+  display:inline-block;
+  vertical-align: middle;
+  margin-bottom:6rem/@rem;
+  margin-right:19rem/@rem;
+}
+.weixin i{
+  color:#999;
+  font-size:18rem/@rem;
+  display:inline-block;
+  margin-left:8rem/@rem;
+}
+.alipay .pay_icon{
+  background-position: 0 -66rem/@rem;
+}
+.pay_type .select{
+  //background:url(/v2/images/h5/pay.png) no-repeat 0 -132rem/@rem;
+  background-size:66rem/@rem 264rem/@rem;
+  height:66rem/@rem;
+  width:66rem/@rem;
+  margin-top:20rem/@rem;
+  margin-right:-20rem/@rem;
+}
+#pay{
+  display:block;
+  width:695rem/@rem;
+  height:110rem/@rem;
+  background: #e02e2e;
+  color:#fff;
+  font-size:48rem/@rem;
+  line-height: 110rem/@rem;
+  text-align:center;
+  border-radius:10rem/@rem;
+  margin:225rem/@rem auto 0;
+}

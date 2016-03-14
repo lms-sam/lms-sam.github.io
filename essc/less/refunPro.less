@@ -1,0 +1,140 @@
+@import './base.less';
+@import './common.less';
+@rem:46.875rem;
+@xColor:#ffad98;
+
+.orderInfo {
+    height: 167/@rem;
+    background: #fff;
+    padding: 19/@rem 30/@rem 18/@rem;
+    margin-bottom: 15/@rem;
+    img {
+        width: 130/@rem;
+        height: 130/@rem;
+        border-radius: 6/@rem;
+        margin-right: 22/@rem;
+        .fl;
+    }
+    .info {
+        h3 {
+            font-size: 25/@rem;
+            line-height: 53/@rem;
+            height: 53/@rem;
+        }
+        p {
+            font-size: 22/@rem;
+            color: #a7a7a7;
+            margin-bottom: 23/@rem;
+            line-height: 28/@rem;
+        }
+        div {
+            line-height: 24/@rem;
+            font-size: 28/@rem;
+            color: #e00314;
+        }
+        i {
+            font-size: 18/@rem;
+            color: #ccc;
+            text-decoration: line-through;
+            margin-left: 15/@rem;
+        }
+    }
+}
+.refundMsgList{
+	padding: 0 15*2/@rem 45*2/@rem;
+	.title{
+		height: 50*2/@rem;
+		overflow: hidden;
+	}
+	.name{
+		.fl;
+		font-size: 10.5*2/@rem;
+		line-height: 50*2/@rem;
+		color:#a7a7a7;
+	}
+	.time{
+		font-size: 10.5*2/@rem;
+		line-height: 50*2/@rem;
+		color:#8b8b8b;
+		.fr;
+	}
+	.con{
+		width: 335*2/@rem;
+		padding:2.5*2/@rem 13*2/@rem 13.5*2/@rem;
+		border-radius: 4*2/@rem;
+		position: relative;
+		background: #52a3cc;
+		.fr;
+		h3{
+			height: 41*2/@rem;
+			line-height: 41*2/@rem;
+			font-size: 12*2/@rem;
+			color:#fff;
+			border-bottom: 1*2/@rem dashed rgba(255,255,255,0.5);
+			margin-bottom: 11*2/@rem;
+		}
+		p{
+			font-size: 13*2/@rem;
+			line-height: 23*2/@rem;
+			color:#fff;
+		}
+		.triangle{
+			position: absolute;
+			border: 6.5*2/@rem solid transparent;
+			border-right-color: #52a3cc;
+			left: -12*2/@rem;
+			top: 14*2/@rem;
+		}
+	}
+	.sysMsg1{
+		
+	}
+	.sysMsg2{
+		.con{
+			background: #ff7654;
+		}
+		.triangle{
+			border-right-color: #ff7654;
+		}
+	}
+	.sysMsg3{
+		h3{
+			color:#666;
+			border-bottom-color: #e9e9e9;
+		}
+		p{
+			color:#666;
+		}
+		.con{
+			background: #fff;
+		}
+		.triangle{
+			border-right-color: #fff;
+		}
+	}
+	.submitB{
+		overflow: hidden;
+		width: 16rem;
+		margin-left: -15*2/@rem;
+		padding-top: 21*2/@rem;
+		position: relative;
+		button{
+			width: 50%;
+			float: left;
+			background: #fff;
+			border:0;
+			font-size: 13*2/@rem;
+			height: 48.5*2/@rem;
+		}
+		.sure{
+			color: #ff7654;
+		}
+		.b{
+			position: absolute;
+			left: 50%;
+			height: 50%;
+			top: 40%;
+			border-left: 1px solid #d5d5d5;
+		}
+	}
+}

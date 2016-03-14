@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>竞拍保证金</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bidBond.css">
+	<script src="js/base.js"></script>
+</head>
+<body>
+	<div class="wrap">
+        <main>
+            <nav>
+                <button class="goback"><img src="images/auctionList/goBack-Btn.png" alt=""></button>竞拍保证金
+            </nav>
+            <section class="orderInfo">
+                <img src="images/buyerEvaluate/thingP.png" alt="">
+                <div class="info">
+                    <h3>【鹿晗】最新限量专辑</h3>
+                    <p>如果你无法简洁的表达你的想法，那只如果</p>
+                    <div>
+                        <span class="price">¥180<i>起拍</i></span>
+                        <span class="freight">运费： ¥<i>12</i></span>
+                    </div>
+                </div>
+            </section>
+            <section class="bond">
+                <div class="tit">本次出价</div>
+                <div class="con">¥<i>12300</i></div>
+            </section>
+            <section class="form">
+                <div>
+                    <span class="tit">收货人：</span>
+                    <span class="con">shenshen</span>
+                </div>
+                <div>
+                    <span class="tit">电话：</span>
+                    <span class="con">13451345134</span>
+                </div>
+                <div>
+                    <span class="tit">地址：</span>
+                    <span class="con">福建 厦门市 集美区(天马路西,西滨路东,龙船路 北,厦漳高速南) 灌口镇深青村第五组511号</span>
+                </div>
+                <div class="SelAdre">
+                    <button>
+                        <span>+</span>选择地址
+                    </button>
+                </div>
+                <div class="answer">
+                    <span class="tips">(竞拍结束，“出局”或“付款”后退还）</span>
+                    <div class="con">
+                        <span>¥<i>123</i></span>
+                    </div>
+                </div>
+            </section>
+            <section class="decision">
+                <button class="sure">立即支付</button>
+            </section>
+            <section class="payWin">
+                <ul class="popup">
+                    <li><div class="con">请选择支付方式</div><span class="close"></span></li>
+                    <li><div class="con">需付款</div><span>¥<i>12300</i></span></li>
+                    <li class="paylink"><a href="#">
+                        <img src="images/publish/weixinpay@2x.png" alt="">
+                        <div class="fl">微信支付</div>
+                        <img src="images/publish/gt@2x.png" alt="">
+                    </a></li>
+                    <li class="paylink"><a href="#">
+                        <img src="images/publish/alipay@2x.png" alt="">
+                        <div>支付宝收款</div>
+                        <img src="images/publish/gt@2x.png" alt="">
+                    </a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="js/require.2.1.9-jquery.2.0.3-underscore.1.5.2-backbone.1.0.0.js"></script>
+    <script>
+        require(['js/popUp'],function (PopUp) {
+            var popUp = new PopUp({
+                popShadow : '.payWin',
+                showBtn:'.sure'
+            });
+        });
+    </script>
+</body>
+</html>

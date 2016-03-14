@@ -1,0 +1,72 @@
+@import './base.less';
+@import './common.less';
+@rem:46.875rem;
+
+.auctionList{
+  li{
+    overflow: hidden;
+    padding:17/@rem 30/@rem 15/@rem;
+    background: #fff;
+    margin-bottom: 1*2/@rem;
+  }
+  .avator{
+  	width: 100/@rem;
+  	height: 100/@rem;
+  	border-radius: 50%;
+  	margin-right: 27/@rem;
+  	.fl;
+  }
+  .insetShadow{
+    width: 100/@rem;
+    height: 100/@rem;
+    border-radius: 50%;
+    box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left : 30/@rem;
+  }
+  .auctionMsg{
+  	width: 220/@rem;
+  	margin-right: 135/@rem;
+  	.fl;
+  	h2{
+  		font-size: 26/@rem;
+  		line-height: 54/@rem;
+  		color:#000;
+  	}
+  	p{
+  		font-size: 14/@rem;
+  		line-height: 40/@rem;
+  		color:#adadad;
+  	}
+
+  }
+  .status{
+    .fr;
+    font-style: italic;
+  	line-height: 102/@rem;
+  	font-size: 13/@rem;
+  	font-weight: bold;
+  	color:#e00314;
+  }
+  .product{
+    position: relative;
+    p{
+      color:#e84653;
+    }
+    .productImg{
+      .fl;
+      width: 100/@rem;
+      height: 100/@rem;
+      margin-right: 27/@rem;
+      border-radius: 12/@rem;
+    }
+    .insetShadow{
+      width: 100/@rem;
+      height: 100/@rem;
+      border-radius: 12/@rem;
+      box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      left : 30/@rem;
+    }
+  }
+}

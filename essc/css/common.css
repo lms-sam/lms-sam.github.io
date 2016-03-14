@@ -1,0 +1,23 @@
+nav {
+  height: 1.6rem;
+  line-height: 1.6rem;
+  background: #ff7654;
+  text-align: center;
+  color: #fff;
+  font-size: 0.64rem;
+  position: relative;
+}
+nav .goback {
+  height: 100%;
+  padding: 0.64rem;
+  background: none;
+  border: none;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+nav .goback img {
+  width: 0.384rem;
+  margin-top: -0.14933333rem;
+}
