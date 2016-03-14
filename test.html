@@ -13,8 +13,9 @@
 	</style>
 </head>
 <body>
-	<input type="search" name="q" class="J_autocomplete" autocomplete="off" value="">
-	<input type="image" src="" alt="">
+
+	<div id="id"></div>
+	<input type="text" class="txt" autocomplete="off" autocorrect="off" maxlength="64" id="index-kw" name="word" class="se-input adjust-input" data-sug="1"> <br>
 	<input type="button"> button <br/>
 	<input type="checkbox"> checkbox <br/>
 	<input type="color"> color <br/>
@@ -38,10 +39,9 @@
 	<input type="time"> time <br/>
 	<input type="url"> url <br/>
 	<input type="week"> week <br/>
-	<div id="id"></div>
 	<script>
 		var id = document.querySelector('#id');
-		document.querySelector('input').addEventListener('keyup',function (e) {
+		document.querySelector('.txt').addEventListener('keyup',function (e) {
 			id.innerHTML = e.keyCode
 			// console.log();/
 		});
