@@ -4,8 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Document</title>
+	<style>
+		#id{
+			width: 200px;	
+			height: 200px;
+			border:1px solid red;
+		}
+	</style>
 </head>
 <body>
-	<input type="text" maxlength="20" autocomplete="off" id="index_newkeyword" name="keyword" value="" placeholder="318三星超级品牌日 s7抢先预约" class="hilight2">
+	<input type="search" name="q" class="J_autocomplete" autocomplete="off" value="">
+	<div id="id"></div>
+	<script>
+		var id = document.querySelector('#id');
+		document.querySelector('input').addEventListener('keyup',function (e) {
+			id.innerHTML = e.keyCode
+			// console.log();/
+		});
+	</script>
 </body>
 </html>
