@@ -2,49 +2,47 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<style>
-		#id{
-			width: 200px;	
-			height: 200px;
-			border:1px solid red;
+		input[type=radio] {
+		  position: relative;
+		  width: 37px;
+		  height: 10px;
+		  top: -15px;
+		  margin-right: 27px;
+		}
+		input[type=radio]::before,
+		input[type=radio]::after {
+		  position: absolute;
+		  display: block;
+		  content: '';
+		  border-radius: 50%;
+		  transition: .3s all esae;
+		}
+		input[type=radio]::before {
+		  top: 0;
+		  left: 0;
+		  width: 20px;
+		  height: 20px;
+		  border: 10px solid #ffe4dd;
+		  background-color: #ffe4dd;
+		}
+		input[type=radio]::after {
+		  top: 9px;
+		  left: 10px;
+		  width: 21px;
+		  height: 21px;
+		}
+		input[type=radio]:checked::before {
+		  border-color: #ffe4dd;
+		}
+		input[type=radio]:checked::after {
+		  background-color: #ff7654;
 		}
 	</style>
 </head>
 <body>
-	<input type="file" accept="image/*" />
-	<form data-formposition="i" class="se-form focus" id="index-form" action="/ssid=10e0c0eec3f4c9ee39308136/from=844b/s" method="get" autocomplete="off"><div class="con-wrap"><input type="text"  class="txt" autocomplete="off" autocorrect="off" maxlength="64" id="index-kw" name="word" class="se-input" data-sug="1"><div class="se-inner"><div id="index-cross" class="cross" style="display: none;"></div><div class="callicon-wrap"><div class="baiduapp-icon"></div><div class="baiduappcall-wrap"><div class="qrcode call" data-ac="active"></div><input id="ts-image-uploader" type="file" data-role="uploader" accept="image/*" style="display: block; position: absolute; top: 0px; left: 0px; font-size: 80px; z-index: 100; opacity: 0; overflow: hidden; width: 52px; height: 39px;"><div class="voice call" data-ac="active"></div></div></div><button id="index-bn" class="se-bn" type="submit">百度一下</button></div></div><div id="index-box"><div class="suggest-div" style="display: none;"><div class="suggest-direct" style="display: none;"></div><div class="suggest-panel"><div class="suggest-content"></div><div class="suggest-oper sug-active-his"><div class="suggest-oper-at sug-oper-btn">直达号</div><div class="suggest-oper-his sug-oper-btn">历史记录</div></div></div><div class="suggest-title"><div class="suggest-logo"></div><div class="suggest-control" style="display: none;"><div class="suggest-control-more"><a href="//m.baidu.com/usrprofile?action=history&amp;u=https%3A%2F%2Fm.baidu.com%2F%3Ffrom%3D844b%26vit%3Dfps"><i class="icon-logo"></i>查看更多历史</a></div><div class="suggest-control-set"><a href="//m.baidu.com/usrprofile?action=config&amp;model=user&amp;ori=sug&amp;u=https%3A%2F%2Fm.baidu.com%2F%3Ffrom%3D844b%26vit%3Dfps"><i class="icon-setting"></i>设置</a></div></div><div class="suggest-at">直达号</div></div><div class="suggest-close">关闭</div></div></div><input type="hidden" name="ts" value="0"><input type="hidden" name="t_kt" value="0"><input type="hidden" name="ie" value="utf-8"><input type="hidden" name="rsv_iqid" value="17116164991721322020"><input type="hidden" name="rsv_t" value="c24eEzBeeOLQSawY1xcAIjA%2F2h97zbiShOOTjIAw93XeDZ5m95abEZFEsQ"><input type="hidden" name="sa" value="ib"><input type="hidden" name="ms" value="1"><input type="hidden" name="rsv_pq" value="17116164991721322020"><input type="hidden" name="rsv_sug4" value="1457941372148"></form>
-	<div id="id"></div>
-	<input type="button"> button <br/>
-	<input type="checkbox"> checkbox <br/>
-	<input type="color"> color <br/>
-	<input type="date"> date <br/>
-	<input type="datetime"> datetime <br/>
-	<input type="datetime-local"> datetime-local <br/>
-	<input type="email"> email <br/>
-	<input type="file"> file <br/>
-	<input type="hidden"> hidden <br/>
-	<input type="image"> image <br/>
-	<input type="month"> month <br/>
-	<input type="number"> number <br/>
-	<input type="password"> password <br/>
-	<input type="radio"> radio <br/>
-	<input type="range"> range <br/>
-	<input type="reset"> reset <br/>
-	<input type="search"> search <br/>
-	<input type="submit"> submit <br/>
-	<input type="tel"> tel <br/>
-	<input type="text"> text <br/>
-	<input type="time"> time <br/>
-	<input type="url"> url <br/>
-	<input type="week"> week <br/>
-	<script>
-		var id = document.querySelector('#id');
-		document.querySelector('.txt').addEventListener('keyup',function (e) {
-			id.innerHTML = e.keyCode
-			// console.log();/
-		});
-	</script>
+	<input type="radio" name="" id="">
 </body>
 </html>
