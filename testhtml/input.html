@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		input{
+			margin-bottom: 10px;
+		}
+	</style>
+	<script src="../javascripts/zepto.min.js"></script>
+</head>
+<body>
+	<input type="datetimeNew">
+	<input type="datetime-local">
+	<input type="email">
+	<input type="image">
+	<input type="month">
+	<input type="number">
+	<input type="range">
+	<input type="search">
+	<input type="time">
+	<input type="url">
+	<input type="week">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="datetime-local" >
+	<script>
+		var aInput = $('input');
+		aInput.each(function(index, el) {
+			$(el).after($(el).attr('type')+' </br>');
+		});
+	</script>
+</body>
+</html>
