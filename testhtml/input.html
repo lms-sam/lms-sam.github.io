@@ -8,10 +8,16 @@
 		input{
 			margin-bottom: 10px;
 		}
+		div{
+			width: 200px;
+			height: 200px;
+			border:1px solid red;
+		}
 	</style>
 	<script src="../javascripts/zepto.min.js"></script>
 </head>
 <body>
+	<div></div>
 	<input type="time">
 	<input type="datetime">
 	<input type="date">
@@ -38,8 +44,24 @@
 			var timeStamp = this.valueAsNumber;
 			var date = new Date();
 			date.setTime(timeStamp);
-			console.dir( date);
+			$('div').html(this.value);
 		})
+		$.ajax({
+			url: '/path/to/file',
+			type: 'default GET (Other values: POST)',
+			dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+			data: {param1: 'value1'},
+		})
+		.done(function() {
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
 	</script>
 </body>
 </html>
