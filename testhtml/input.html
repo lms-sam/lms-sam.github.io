@@ -16,7 +16,7 @@
 	<input type="datetime">
 	<input type="date">
 	<input type="datetime">
-	<input type="datetime-local" min="1979-12-31">
+	<input type="datetime-local" min="1979-12-31" class="demo">
 	<input type="color">
 	<input type="email">
 	<input type="image">
@@ -34,6 +34,12 @@
 		aInput.each(function(index, el) {
 			$(el).after($(el).attr('type')+' </br>');
 		});
+		$('.demo').change(function () {
+			var timeStamp = this.valueAsNumber;
+			var date = new Date();
+			date.setTime(timeStamp);
+			console.dir( date);
+		})
 	</script>
 </body>
 </html>
