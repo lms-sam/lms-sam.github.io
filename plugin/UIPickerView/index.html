@@ -24,11 +24,12 @@
 	<button id="select-picker">select picker</button>
 	<button id="render-picker">render picker</button>
 
+
 	<div class="region-picker-wrapper visibility-control" id="region-picker">
 	    <div class="header">
         	<div class="bar bar-header">
           		<button class="button button-clear" id="selectClose">Close</button>
-          		<div class="h3 title">Select</div>
+          		<div class="h3 title">你</div>
           		<button class="button button-clear button-positive" id="selectYes">Yes</button>
         	</div>
      	</div>
@@ -37,128 +38,99 @@
 	        <div class="select-zone middle"></div>
 	        <div class="select-zone bottom"></div>
 	        <div class="region-picker" >
-	          	<div id="provincePicker"></div>
+	          	<div id="YearPicker"></div>
 	        </div>
 	        <div class="region-picker">
-	          	<div id="cityPicker"></div>
+	          	<div id="MonthPicker"></div>
 	        </div>
 	        <div class="region-picker">
-	          	<div id="areaPicker"></div>
+	          	<div id="DayPicker"></div>
 	        </div>
 	    </div>
     </div>
+
     <script type="text/javascript">
     	var pickerCreate = document.getElementById('create-picker');
 		var pickerOpen = document.getElementById('open-picker');
 		var pickerClose = document.getElementById('close-picker');
 		var pickerSelect = document.getElementById('select-picker');
 		var pickerRender = document.getElementById('render-picker');
+		
 		var up,up1,up2,animaed;
 
 		var selectYes = document.getElementById('selectYes');
 		var selectClose = document.getElementById('selectClose');
-		var data1 = [
-			{
-				"key":"Swift",
-				"value":"Swift"
-			},
-			{
-				"key":"iOS",
-				"value":"iOS"
-			},
-			{
-				"key":"Objective-C",
-				"value":"Objective-C"
-			},
-			{
-				"key":"back homeTown",
-				"value":"back homeTown"
-			},
-			{
-				"key":"github",
-				"value":"github"
-			},
-			{
-				"key":"icepy",
-				"value":"icepy"
-			}
-		];
-		var data2 = [
-			{
-				"key":"Swift2",
-				"value":"Swift2"
-			},
-			{
-				"key":"iOS2",
-				"value":"iOS"
-			},
-			{
-				"key":"Objective-C",
-				"value":"Objective-C"
-			},
-			{
-				"key":"back homeTown",
-				"value":"back homeTown"
-			},
-			{
-				"key":"github",
-				"value":"github"
-			},
-			{
-				"key":"icepy",
-				"value":"icepy"
-			}
-		];
-		var data3 = [
-			{
-				"key":"Swift3",
-				"value":"Swift3"
-			},
-			{
-				"key":"iOS2",
-				"value":"iOS"
-			},
-			{
-				"key":"Objective-C",
-				"value":"Objective-C"
-			},
-			{
-				"key":"back homeTown",
-				"value":"back homeTown"
-			},
-			{
-				"key":"github",
-				"value":"github"
-			},
-			{
-				"key":"icepy",
-				"value":"icepy"
-			}
-		];
 
-		var up1Data,up2Data;
+		var NowDate = new Date();
+		var N_y = NowDate.getFullYear();
+		var N_m = NowDate.getMonth()+1;
+		var YearDate = [],MonthDate = [],DayDate = null;
+		// 设置年范围
+		for (var i = N_y; i < N_y+5; i++) {
+			YearDate.push({
+				'key': i ,
+				'value' : i
+			})
+		}
+		// 设置月范围
+		for (var i = 1; i < 13; i++) {
+			MonthDate.push({
+				'key': i ,
+				'value' : i
+			})
+		}
+		
+		function creatDayData(i) {
+			var a = [];
+			i = i + 1 ;
+			for (var j = 1; j < i; j++) {
+				a.push({
+					'key' : j ,
+					'value' : j
+				});
+			}
+			return a ;
+		}
+		function getDayCount(y,m) {
+			var d = new Date();
+			d.setFullYear(y,m,0);
+			var result = d.getDate();
+			DayDate  = creatDayData(result);
+			return DayDate;
+		}
+		function creatDay(ny,nd) {
+			var DayPicker = document.querySelector('#DayPicker');
+			DayPicker.innerHTML = '';
+			up = UIPickerView.createPickerView({
+				dataSource:getDayCount(ny,nd),
+				id:'DayPicker',
+				constraintsId:'wower2',
+				kUP:{
+					kUPCELLHEIGHT:26,
+					kUPFRICTION:0.003
+				},
+				valueChange:function(data){
+					R_d = data.value;
+
+				}
+			});
+		}
+
+		creatDay(N_y,N_m);
+
+		var R_y,R_m,R_d;
 
 		selectYes.addEventListener('click',function(){
 			animaed.finish();
-			console.log(up1Data);
-			console.log(up2Data);
+			console.log(R_y);
+			console.log(R_m);
+			console.log(R_d);
 
-			//if up1Data or up2Data is empty ,so use UPSelectRowIndexPath and UPThen
-
-			if (!up1Data&& up) {
+			if (!R_y&& up) {
 				up.UPSelectRowIndexPath(1).UPThen(function(indexPath,value){
 					console.log(value);
 				})
 			};
-
-			// if (!up2Data&& up1) {
-			// 	up1.UPSelectRowIndexPath(1).UPThen(function(indexPath,value){
-			// 		console.log(value);
-			// 	})
-			// };
-
-			//maybe use your datasource is relatively good
-			//data[0]  //你的数据默认选择第一行
 
 		})
 
@@ -167,49 +139,40 @@
 		})
 
 		pickerCreate.addEventListener('click',function(){
+
 			up = UIPickerView.createPickerView({
-				dataSource:data1,
-				id:'provincePicker',
+				dataSource:YearDate,
+				id:'YearPicker',
 				constraintsId:'wower',
 				kUP:{
 					kUPCELLHEIGHT:26,
 					kUPFRICTION:0.003
 				},
 				valueChange:function(data){
-					console.log(data);
-					up1Data = data;
+					R_y = data.value;
+					N_y = R_y;
+					creatDay(N_y,N_m);
 				}
 			});
-			console.log(up);
+
 			up1 = UIPickerView.createPickerView({
-				dataSource:data2,
-				id:'cityPicker',
+				dataSource:MonthDate,
+				id:'MonthPicker',
 				constraintsId:'wower1',
 				kUP:{
 					kUPCELLHEIGHT:26,
 					kUPFRICTION:0.003
 				},
 				valueChange:function(data){
-					console.log(data);
-					up2Data = data;
+					R_m = data.value;
+					N_m = R_m;
+					creatDay(N_y,N_m);
 				}
 			});
-			up2 = UIPickerView.createPickerView({
-				dataSource:data3,
-				id:'areaPicker',
-				constraintsId:'wower2',
-				kUP:{
-					kUPCELLHEIGHT:26,
-					kUPFRICTION:0.003
-				},
-				valueChange:function(data){
-					console.log(data);
-					up2Data = data;
-				}
-			});
+
 			animaed = CAAnimation.createAnimation({id:'region-picker'});
 			animaed.start();
-			console.log(animaed);
+
 		});
 
 		pickerClose.addEventListener('click',function(){
