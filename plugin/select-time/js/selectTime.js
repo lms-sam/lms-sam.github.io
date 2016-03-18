@@ -210,7 +210,7 @@ define(function(require) {
 						$('#YearPicker').show();
 						$('#MonthPicker').show();
 						$('.sec3').show();
-					},300);
+					},1000);
 				}else{
 					console.log(self.result);
 					selectCount = true;
