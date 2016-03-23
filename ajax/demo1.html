@@ -12,7 +12,8 @@
 			type: 'get',
 		})
 		.done(function(data) {
-			console.log(jQuery.parseJSON(data));
+			var a = eval('('+data+')');
+			console.log(a);
 			console.log("success");
 		})
 		.fail(function() {
