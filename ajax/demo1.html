@@ -9,7 +9,8 @@
 	<script>
 		$.ajax({
 			url: 'a.txt',
-			type: 'get'
+			type: 'get',
+			dataType: 'json'
 		})
 		.done(function(data) {
 			console.log(data);
@@ -21,6 +22,7 @@
 		.always(function() {
 			console.log("complete");
 		});
+		
 		
 	</script>
 </body>
