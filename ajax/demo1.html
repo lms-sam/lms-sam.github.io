@@ -10,10 +10,9 @@
 		$.ajax({
 			url: 'a.txt',
 			type: 'get',
-			dataType: 'json'
 		})
 		.done(function(data) {
-			console.log(data);
+			console.log(jQuery.parseJSON(data));
 			console.log("success");
 		})
 		.fail(function() {
