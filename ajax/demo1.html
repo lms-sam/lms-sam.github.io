@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery-1.12.1.min.js"></script>
+	<script>
+		$.ajax({
+			url: 'a',
+			type: 'get'
+		})
+		.done(function(data) {
+			console.log(data);
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	</script>
+</body>
+</html>
