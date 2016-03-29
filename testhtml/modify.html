@@ -6,27 +6,8 @@
 </head>
 <body>
 	<input type="file" id="file" accept="image/*">
-	<input type="text" cmd="" id="cmd">
 	<img src="" alt="">
 	<script>
-		var cmd = document.querySelector('#cmd');
-		var json = {
-			a : 1,
-			b : 2
-		};
-		function json2str(o) { 
-			var arr = []; 
-			var fmt = function(s) { 
-			if (typeof s == 'object' && s != null) return json2str(s); 
-			return /^(string|number)$/.test(typeof s) ? "'" + s + "'" : s; 
-			} 
-			for (var i in o) arr.push("'" + i + "':" + fmt(o[i])); 
-			return '{' + arr.join(',') + '}'; 
-		} 
-
-		console.log(json2str(json));
-		console.log(JSON.stringify([{a:1,b:2}]));
-		cmd.setAttribute('cmd',json.toString());
 		function dir(objImg) {//计算起点宽高
 			var naW = objImg.naturalWidth,
 				naH = objImg.naturalHeight;
@@ -70,8 +51,6 @@
 			});
 
 		});
-		var ccc = '##123#@##';
-		console.log(ccc.match(/\d+/g));
 	</script>
 </body>
 </html>

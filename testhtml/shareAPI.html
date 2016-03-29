@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function shareApi(target, img, content, url) {
+            switch (target) {
+                case 0:
+                    return "http://v.t.sina.com.cn/share/share.php?pic=" + img + "&title=" + content + "&url=" + url + "&rcontent=";
+                case 1:
+                    return "http://v.t.qq.com/share/share.php?title=" + content + "&pic=" + img + "&url=" + url;
+                case 2:
+                    return "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=" + content + "&pics=" + img + "&url=" + url;
+                case 3:
+                    return "http://share.renren.com/share/buttonshare.do?title=" + content + "&link=" + url + "&rcontent=";
+                case 4:
+                    return "http://www.kaixin001.com/repaste/share.php?rtitle=" + content + "&rurl=" + url + "&rcontent=";
+                case 5:
+                    return "http://www.douban.com/recommend/?title=" + content + "&url=" + url + "&rcontent=";
+                default:
+                    return "http://v.t.sina.com.cn/share/share.php?pic=" + img + "&title=" + content + "&url=" + url + "&rcontent=";
+            }
+        }
+	</script>
+</body>
+</html>
