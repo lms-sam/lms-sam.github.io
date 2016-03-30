@@ -27,8 +27,8 @@
             endmonth:12,                    //日期--月--份结束
             beginday:1,                     //日期--日--份结束
             endday:31,                      //日期--日--份结束
-            beginhour:1,
-            endhour:12,
+            beginhour:0,
+            endhour:23,
             beginminute:00,
             endminute:59,
             curdate:false,                   //打开日期是否定位到当前日期
@@ -71,11 +71,11 @@
         function refreshTime(){
             HourScroll.refresh();
             MinuteScroll.refresh();
-            SecondScroll.refresh();
-            if(initH>12){    //判断当前时间是上午还是下午
-                 SecondScroll.scrollTo(0, initD*40-40, 100, true);   //显示“下午”
-                 initH=initH-12-1;
-            }
+            // SecondScroll.refresh();
+            // if(initH>12){    //判断当前时间是上午还是下午
+            //      SecondScroll.scrollTo(0, initD*40-40, 100, true);   //显示“下午”
+            //      initH=initH-12-1;
+            // }
             HourScroll.scrollTo(0, initH*40, 100, true);
             MinuteScroll.scrollTo(0, initI*40, 100, true);   
             initH=parseInt(nowdate.getHours());
@@ -156,7 +156,7 @@
             $("#datescroll_datetime").show(); 
             $("#Hourwrapper ul").html(createHOURS_UL());
             $("#Minutewrapper ul").html(createMINUTE_UL());
-            $("#Secondwrapper ul").html(createSECOND_UL());
+            // $("#Secondwrapper ul").html(createSECOND_UL());
         }
 
         //日期+时间滑动
@@ -171,11 +171,11 @@
                     indexI = Math.round((this.y/40)*(-1))+1;
                     HourScroll.refresh();
             }})
-            SecondScroll = new iScroll("Secondwrapper",{snap:"li",vScrollbar:false,
-                onScrollEnd:function () {
-                    indexS = Math.round((this.y/40)*(-1));
-                    HourScroll.refresh();
-            }})
+            // SecondScroll = new iScroll("Secondwrapper",{snap:"li",vScrollbar:false,
+            //     onScrollEnd:function () {
+            //         indexS = Math.round((this.y/40)*(-1));
+            //         HourScroll.refresh();
+            // }})
         } 
         function checkdays (year,month){
             var new_year = year;    //取当前的年份        
@@ -220,9 +220,9 @@
                             '<div id="Minutewrapper">'+
                                 '<ul></ul>'+
                             '</div>'+
-                            '<div id="Secondwrapper">'+
-                                '<ul></ul>'+
-                            '</div>'+
+                            // '<div id="Secondwrapper">'+
+                            //     '<ul></ul>'+
+                            // '</div>'+
                         '</div>'+
                     '</section>'+
                     '<footer id="dateFooter">'+
@@ -293,7 +293,7 @@
             }
             return str+"<li>&nbsp;</li>";;
         }
-        //创建 --分-- 列表
+        //创建 --上下午-- 列表
         function createSECOND_UL(){
             var str="<li>&nbsp;</li>";
             str+="<li>上午</li><li>下午</li>"
