@@ -21,7 +21,7 @@
         var yearScroll=null,monthScroll=null,dayScroll=null;
         var HourScroll=null,MinuteScroll=null,SecondScroll=null;
         $.fn.date.defaultOptions = {
-            beginyear:2000,                 //日期--年--份开始
+            beginyear:2016,                 //日期--年--份开始
             endyear:2020,                   //日期--年--份结束
             beginmonth:1,                   //日期--月--份结束
             endmonth:12,                    //日期--月--份结束
@@ -64,7 +64,7 @@
             dayScroll.refresh();
 
             resetInitDete();
-            yearScroll.scrollTo(0, initY*40, 100, true);
+            yearScroll.scrollTo(0, 0*40, 100, true);
             monthScroll.scrollTo(0, initM*40-40, 100, true);
             dayScroll.scrollTo(0, initD*40-40, 100, true); 
         }
